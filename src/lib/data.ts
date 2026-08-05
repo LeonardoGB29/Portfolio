@@ -197,6 +197,18 @@ export const STACK_GROUPS: StackGroup[] = [
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
+    id: "phinix-2026",
+    company: "PHINIX S.A.C.",
+    title: "Practicante Pre-Profesional — Sistemas y Desarrollo Web",
+    startDate: "Mar 2026",
+    endDate: "Jun 2026",
+    points: [
+      "Desarrollo del proyecto Hidranix: backend en Python (FastAPI + SQLAlchemy) sobre PostgreSQL, con diseño de endpoints REST y modelos de datos.",
+      "Apoyo en arquitectura multi-tenant (ruteo por subdominios) y en el ciclo de desarrollo full-stack, bajo modalidad híbrida.",
+      "Entrega de informes periódicos de avance y participación en eventos de innovación e investigación en representación de la empresa."
+    ]
+  },
+  {
     id: "edu-unsa",
     company: "Universidad Nacional de San Agustín de Arequipa (UNSA)",
     title: "Ciencia de la Computación",
@@ -220,6 +232,52 @@ export const EXPERIENCES: ExperienceItem[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    id: "project-puzzle",
+    slug: "context-aware-puzzle",
+    name: "Context-Aware Puzzle Solver",
+    year: 2025,
+    techStack: [
+      "C++",
+      "OpenCV",
+      "Voronoi / Poisson-disk",
+      "Gabor textons",
+      "MRF (energía global)"
+    ],
+    thumbnail:
+      "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=900&q=80&auto=format&fit=crop",
+    sourceCode: "https://github.com/LeonardoGB29/Context-Aware-Puzzle",
+    description:
+      "Generador y solver de rompecabezas de piezas irregulares de bordes rectos en C++/OpenCV. El generador corta la imagen con semillas Poisson-disk + Voronoi (recorte Sutherland–Hodgman) y el solver reconstruye la imagen por continuidad de color en la costura, reforzada con marco-primero, consenso multi-costura y reparación por energía global (MRF). Inspirado en los histogramas de textones de Ruzić & Pižurica.",
+    features: [
+      "Corte irregular sin piezas diminutas: semillas Poisson-disk (Bridson) + diagrama de Voronoi",
+      "Solver por edge-matching con best-buddy, consenso multi-costura y marco-primero",
+      "Reparación final por energía global (MRF) con desalojo de piezas; textones de Gabor como desempate"
+    ]
+  },
+  {
+    id: "project-tpcds",
+    slug: "agente-analitico-tpcds",
+    name: "Agente Analítico Retail (TPC-DS)",
+    year: 2025,
+    techStack: [
+      "Python",
+      "Gemini (LLM)",
+      "Hive",
+      "Spark SQL",
+      "Amazon EMR / S3"
+    ],
+    thumbnail:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop",
+    sourceCode: "https://github.com/LeonardoGB29/Agentic_Analytics",
+    description:
+      "Agente que traduce preguntas en lenguaje natural a SQL analítico sobre un dataset retail TPC-DS en Hive/Spark. Con una sola llamada a Gemini identifica la intención, genera SQL validado y selecciona el motor (Hive para consultas simples, Spark para cargas pesadas); si el LLM falla, usa un catálogo local como respaldo. Corre sobre Amazon EMR con S3.",
+    features: [
+      "NL → SQL + selección de motor en una sola llamada a Gemini (optimización de cuota)",
+      "Validación estricta del SQL (solo SELECT/WITH, tablas permitidas) antes de ejecutar",
+      "Fallback a catálogo local para no enviar SQL roto al pipeline"
+    ]
+  },
   {
     id: "project-1",
     slug: "sistema-academico-epcc",

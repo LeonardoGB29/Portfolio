@@ -66,6 +66,7 @@ export interface ExperienceItem {
   company: string;
   startDate: string;
   endDate: string;
+  points?: string[];
 }
 
 export interface Project {

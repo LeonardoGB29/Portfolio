@@ -65,7 +65,7 @@ export default function Experiences() {
   return (
     <section className="py-section" id="my-experience">
       <div className="container" ref={containerRef}>
-        <SectionTitle title="EDUCATION & CERTIFICATIONS" />
+        <SectionTitle title="EXPERIENCE, EDUCATION & CERTIFICATIONS" />
 
         {experience.length === 0 ? (
           <p className="dark slide-up text-muted-foreground py-10 text-3xl">
@@ -80,8 +80,22 @@ export default function Experiences() {
                   {item.title}
                 </p>
                 <p className="cursor text-lg text-white/80">
-                  {item.startDate} - {item.endDate}
+                  {item.startDate ? `${item.startDate} - ` : ""}
+                  {item.endDate}
                 </p>
+                {item.points && item.points.length > 0 && (
+                  <ul className="mt-4 space-y-2">
+                    {item.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-start gap-3 text-base text-white/70 md:text-lg"
+                      >
+                        <span className="mt-2.5 inline-block size-1.5 shrink-0 rounded-full bg-white/40" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
