@@ -269,6 +269,9 @@ export const PROJECTS: Project[] = [
     ],
     thumbnail:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop",
+    galleryImages: [
+      withBasePath("/images/projects/tpcds/agente_analitico.jpeg")
+    ],
     sourceCode: "https://github.com/LeonardoGB29/Agentic_Analytics",
     description:
       "Agente que traduce preguntas en lenguaje natural a SQL analítico sobre un dataset retail TPC-DS en Hive/Spark. Con una sola llamada a Gemini identifica la intención, genera SQL validado y selecciona el motor (Hive para consultas simples, Spark para cargas pesadas); si el LLM falla, usa un catálogo local como respaldo. Corre sobre Amazon EMR con S3.",
